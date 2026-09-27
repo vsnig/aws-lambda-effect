@@ -1,0 +1,59 @@
+{
+  "name": "aws-lambda-effect",
+  "version": "0.0.1",
+  "description": "Typed rule-and-flavor pipelines for AWS Lambda batch events (SQS, Kinesis, DynamoDB Streams), built on Effect",
+  "keywords": [
+    "aws",
+    "lambda",
+    "effect",
+    "sqs",
+    "kinesis",
+    "dynamodb-streams",
+    "event-driven",
+    "pipeline"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vsnig/aws-lambda-effect.git"
+  },
+  "homepage": "https://github.com/vsnig/aws-lambda-effect#readme",
+  "bugs": "https://github.com/vsnig/aws-lambda-effect/issues",
+  "type": "module",
+  "sideEffects": false,
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js"
+    }
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "src",
+    "!src/from",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "rm -rf dist && tsc -p tsconfig.build.json",
+    "typecheck": "tsc -p tsconfig.json",
+    "example": "tsx examples/demo.ts",
+    "prepublishOnly": "pnpm typecheck && pnpm build"
+  },
+  "peerDependencies": {
+    "effect": "^4.0.0-rc.116"
+  },
+  "devDependencies": {
+    "@ianvs/prettier-plugin-sort-imports": "^4.7.0",
+    "@total-typescript/tsconfig": "^1.0.4",
+    "@types/node": "^22.20.4",
+    "effect": "4.0.0-rc.116",
+    "prettier": "^3.7.4",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.3",
+    "vitest": "^3.2.4"
+  },
+  "packageManager": "pnpm@10.26.0"
+}
